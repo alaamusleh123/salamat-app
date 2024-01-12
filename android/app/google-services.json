@@ -1,0 +1,142 @@
+{
+  "project_info": {
+    "project_number": "772410507639",
+    "project_id": "service-provider-app-flutter",
+    "storage_bucket": "service-provider-app-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772410507639:android:9eb4d9a621d28812372172",
+        "android_client_info": {
+          "package_name": "com.health.health_care_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772410507639-mo93b830qkrfd03d00t22250lkpu3u9r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.health.health_care_app",
+            "certificate_hash": "46bc89dc32853cc5ad13611941cdf4cae5d154ba"
+          }
+        },
+        {
+          "client_id": "772410507639-aj397tu6diacqeri0cpfp8jfiqanlcj2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf4WCob0Yk2zd-KxRb3zEaELK1aOTg2kA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772410507639-aj397tu6diacqeri0cpfp8jfiqanlcj2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "772410507639-077d9aq0he522crq3an6hia245e785ug.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.salamat.salamatApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772410507639:android:063ee880d59599b6372172",
+        "android_client_info": {
+          "package_name": "com.salamat.salamat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772410507639-nmq17upd7521ak8if103b2lqm4tp3tnl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.salamat.salamat",
+            "certificate_hash": "95baa2e567c9056d69902f45a9698ce85b126fa4"
+          }
+        },
+        {
+          "client_id": "772410507639-aj397tu6diacqeri0cpfp8jfiqanlcj2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf4WCob0Yk2zd-KxRb3zEaELK1aOTg2kA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772410507639-aj397tu6diacqeri0cpfp8jfiqanlcj2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "772410507639-077d9aq0he522crq3an6hia245e785ug.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.salamat.salamatApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772410507639:android:1312b71e793d7f89372172",
+        "android_client_info": {
+          "package_name": "com.salamat.salamat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772410507639-4tpfsia07ctnceeidmvs69knth4uivdu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.salamat.salamat_app",
+            "certificate_hash": "dbfa8a7d06e219a21c12b133bfc93aff40b072d5"
+          }
+        },
+        {
+          "client_id": "772410507639-aj397tu6diacqeri0cpfp8jfiqanlcj2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf4WCob0Yk2zd-KxRb3zEaELK1aOTg2kA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772410507639-aj397tu6diacqeri0cpfp8jfiqanlcj2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "772410507639-077d9aq0he522crq3an6hia245e785ug.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.salamat.salamatApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
