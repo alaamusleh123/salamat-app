@@ -5,7 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import '../../../../widget/app_text.dart';
 import '../../../../widget/app_text_field.dart';
 import '../../c/auth_controller.dart';
-import '../../sign_in_screen/v/sign_in_screen.dart';
+import '../sign_in/sign_in_screen.dart';
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
 
@@ -145,7 +145,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     final email = controller.email.text;
     final password = controller.password.text;
     final fullName = controller.fullName.text;
-    User? user= await controller.signUpWithEmailAndPassword(email, password);
+    User? user= await controller.signUpWithEmailAndPassword(email: email, password: password);
     setState(() {
       isSigningUp=false;
     });

@@ -13,8 +13,8 @@ import '../../../../widget/app_text_field.dart';
 import '../../../home_screen.dart';
 import '../../c/auth_controller.dart';
 
-import '../../forget_pass_ screen.dart';
-import '../../sign_up_screen/v/sign_up_screen.dart';
+import '../forgot_password/forget_pass_ screen.dart';
+import '../sign_up/sign_up_screen.dart';
 
 
 class SignINScreen extends StatefulWidget {

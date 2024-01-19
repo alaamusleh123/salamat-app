@@ -10,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../home_screen.dart';
 
-class AuthController extends GetxController{
+class AuthController extends GetxController {
   static AuthController get instance => Get.find();
   final email = TextEditingController();
   final password = TextEditingController();
@@ -18,124 +18,120 @@ class AuthController extends GetxController{
   final newPassword = TextEditingController();
   final confirmpPssword = TextEditingController();
 
-  final firstCodeTextController= TextEditingController() ;
-  final secondCodeTextController= TextEditingController();
-  final thirdCodeTextController= TextEditingController() ;
-  final fourthCodeTextController= TextEditingController() ;
-  final fifthCodeTextController= TextEditingController() ;
+  final firstCodeTextController = TextEditingController();
 
-  final  firstFocusNode= FocusNode();
-  final   secondFocusNode=FocusNode() ;
-  final thirdFocusNode=FocusNode();
-  final fourthFocusNode= FocusNode();
-  final fifthFocusNode= FocusNode();
+  final secondCodeTextController = TextEditingController();
+  final thirdCodeTextController = TextEditingController();
 
-  RxBool loading = false.obs;
-  void setLoading(bool value){
-    loading.value = value;
-  }
+  final fourthCodeTextController = TextEditingController();
+
+  final fifthCodeTextController = TextEditingController();
+
+  final firstFocusNode = FocusNode();
+  final secondFocusNode = FocusNode();
+
+  final thirdFocusNode = FocusNode();
+  final fourthFocusNode = FocusNode();
+  final fifthFocusNode = FocusNode();
 
   FirebaseAuth _auth = FirebaseAuth.instance;
 
-  check() async{
-    User? user = _auth.currentUser;
-    // if (user != null) {
-    //   // User is signed in
-    //  var userDoc = await _firestore.collection('users').doc(user.uid).get();
-    //
-    //   if (userDoc.exists) {
-    //     // User has a saved email
-    //     print('Welcome back, ${user.email}!');
-    //   } else {
-    //     // First-time user
-    //     print('Welcome, new user!');
-    //     // Save user's email to the database
-    //     await _firestore.collection('users').doc(user.uid).set({
-    //       'email': user.email,
-    //     });
-    //   }
-    // } else {
-    //   // User is not signed in
-    //   print('User is not signed in.');
-    // }
+  late GlobalKey<FormState> formkey;
+
+  RxBool loading = false.obs;
+
+  void setLoading(bool value) {
+    loading.value = value;
   }
 
-  late GlobalKey<FormState> formkey;
   @override
   void onInit() {
     formkey = GlobalKey<FormState>();
     super.onInit();
   }
 
-    Future<User?> signUpWithEmailAndPassword(String email , String password) async{
-    try{
-      UserCredential credential =await _auth.createUserWithEmailAndPassword(email: email, password: password);
+  Future<User?> signUpWithEmailAndPassword(
+      {required String email, required String password}) async {
+    try {
+      UserCredential credential = await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
       FirebaseAuth.instance.currentUser!.sendEmailVerification();
       return credential.user;
-    }  catch (e){
+    } catch (e) {
       print('some error occured');
     }
     return null;
   }
 
-
-  Future<User?> signInWithEmailAndPassowrd(String email , String password) async{
-    try{
-      UserCredential credential =await _auth.signInWithEmailAndPassword(email: email, password: password);
+  Future<User?> signInWithEmailAndPassowrd(
+      String email, String password) async {
+    try {
+      UserCredential credential = await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
       // final SharedPreferences prefs = await SharedPreferences.getInstance();
       // prefs.setBool('isLoggedIn', true);
-      if(credential.user!.emailVerified){
+      if (credential.user!.emailVerified) {
         print('suc =====================================');
         return credential.user;
-      }else{
-        Get.snackbar("Error", "Please go to your email and click on the email verification link",
+      } else {
+        Get.snackbar(
+          "Error",
+          "Please go to your email and click on the email verification link",
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Colors.redAccent.withOpacity(0.1),
           colorText: Colors.red,
-        );}
-    }catch(e){
+        );
+      }
+    } catch (e) {
       print('some error occured');
     }
     return null;
   }
 
-  signInWithGoogle() async{
+  signInWithGoogle() async {
     final GoogleSignIn _googleSignIn = GoogleSignIn();
-    try{
-      final GoogleSignInAccount? googleSignInAccount = await _googleSignIn.signIn();
-      if(googleSignInAccount != null){
-        final GoogleSignInAuthentication googleSignInAuthentication= await googleSignInAccount.authentication;
-        final AuthCredential credential= GoogleAuthProvider.credential(
+    try {
+      final GoogleSignInAccount? googleSignInAccount =
+          await _googleSignIn.signIn();
+      if (googleSignInAccount != null) {
+        final GoogleSignInAuthentication googleSignInAuthentication =
+            await googleSignInAccount.authentication;
+        final AuthCredential credential = GoogleAuthProvider.credential(
             idToken: googleSignInAuthentication.idToken,
-            accessToken: googleSignInAuthentication.accessToken
-        );
+            accessToken: googleSignInAuthentication.accessToken);
         await _auth.signInWithCredential(credential);
-        Get.offAll(() =>HomeScreen());
+        Get.offAll(() => HomeScreen());
       }
-    }catch(e){
+    } catch (e) {
       print('Some error occured $e');
       Get.snackbar('Error', 'Some error occured $e');
     }
   }
 
-  sendPasswordResetEmail()async{
-    if(email.text == ""){
-      Get.snackbar("Error", "Please enter your email",
+  sendPasswordResetEmail() async {
+    if (email.text == "") {
+      Get.snackbar(
+        "Error",
+        "Please enter your email",
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.redAccent.withOpacity(0.1),
         colorText: Colors.red,
       );
     }
-    try{
+    try {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email.text);
-      Get.snackbar("Error", "A link to reset your password has been sent to your email. Please check the link",
+      Get.snackbar(
+        "Error",
+        "A link to reset your password has been sent to your email. Please check the link",
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.redAccent.withOpacity(0.1),
         colorText: Colors.red,
       );
-    }catch(e){
+    } catch (e) {
       print(e);
-      Get.snackbar("Error", "Please make sure you enter the correct email",
+      Get.snackbar(
+        "Error",
+        "Please make sure you enter the correct email",
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.redAccent.withOpacity(0.1),
         colorText: Colors.red,
@@ -180,31 +176,30 @@ class AuthController extends GetxController{
     }
   }
 
+// Future<UserCredential> signInWithGoogle() async {
+//   final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+//   final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+//   final credential = GoogleAuthProvider.credential(
+//     accessToken: googleAuth?.accessToken,
+//     idToken: googleAuth?.idToken,
+//   );
+//   return await FirebaseAuth.instance.signInWithCredential(credential);
+// }
 
-  // Future<UserCredential> signInWithGoogle() async {
-  //   final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-  //   final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
-  //   final credential = GoogleAuthProvider.credential(
-  //     accessToken: googleAuth?.accessToken,
-  //     idToken: googleAuth?.idToken,
-  //   );
-  //   return await FirebaseAuth.instance.signInWithCredential(credential);
-  // }
-
-  // Future<UserCredential> signInWithGoogle() async {
-  //   // Trigger the authentication flow
-  //   final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-  //
-  //   // Obtain the auth details from the request
-  //   final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
-  //
-  //   // Create a new credential
-  //   final credential = GoogleAuthProvider.credential(
-  //     accessToken: googleAuth?.accessToken,
-  //     idToken: googleAuth?.idToken,
-  //   );
-  //
-  //   // Once signed in, return the UserCredential
-  //   return await FirebaseAuth.instance.signInWithCredential(credential);
-  // }
+// Future<UserCredential> signInWithGoogle() async {
+//   // Trigger the authentication flow
+//   final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+//
+//   // Obtain the auth details from the request
+//   final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+//
+//   // Create a new credential
+//   final credential = GoogleAuthProvider.credential(
+//     accessToken: googleAuth?.accessToken,
+//     idToken: googleAuth?.idToken,
+//   );
+//
+//   // Once signed in, return the UserCredential
+//   return await FirebaseAuth.instance.signInWithCredential(credential);
+// }
 }

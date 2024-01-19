@@ -58,7 +58,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:salamat_app/view/page_view_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../view/auth/sign_in_screen/v/sign_in_screen.dart';
+import '../view/auth/v/sign_in/sign_in_screen.dart';
 import '../view/home_screen.dart';
 import '../view/language_screen.dart';
 

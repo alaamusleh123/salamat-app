@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:salamat_app/view/auth/forget_pass_%20screen.dart';
-import 'package:salamat_app/view/auth/reset_passsword_screen.dart';
-import 'package:salamat_app/view/auth/sign_up_screen/v/sign_up_screen.dart';
+import 'package:salamat_app/view/auth/v/forgot_password/forget_pass_%20screen.dart';
+import 'package:salamat_app/view/auth/v/forgot_password/reset_passsword_screen.dart';
+import 'package:salamat_app/view/auth/v/sign_up/sign_up_screen.dart';
 import 'package:salamat_app/widget/code_number.dart';
 
 
-import '../../widget/app_text.dart';
-import '../../widget/gradient_text.dart';
-import '../../widget/my_button.dart';
-import 'c/auth_controller.dart';
+import '../../../../widget/app_text.dart';
+import '../../../../widget/gradient_text.dart';
+import '../../../../widget/my_button.dart';
+import '../../c/auth_controller.dart';
 class OtpVerificationScreen extends StatefulWidget {
   const OtpVerificationScreen({super.key});
 

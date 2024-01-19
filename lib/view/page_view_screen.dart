@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:salamat_app/view/auth/sign_in_screen/v/sign_in_screen.dart';
+import 'package:salamat_app/view/auth/v/sign_in/sign_in_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../local/locale_controller.dart';
 import '../shared_pref/shared_pref_controller.dart';

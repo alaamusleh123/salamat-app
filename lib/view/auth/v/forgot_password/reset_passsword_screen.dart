@@ -2,14 +2,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:salamat_app/view/auth/otp_verification_screen.dart';
-import 'package:salamat_app/view/auth/sign_in_screen/v/sign_in_screen.dart';
+import 'package:salamat_app/view/auth/v/forgot_password/otp_verification_screen.dart';
+import 'package:salamat_app/view/auth/v/sign_in/sign_in_screen.dart';
 
 
-import '../../widget/app_text.dart';
-import '../../widget/app_text_field.dart';
-import '../../widget/my_button.dart';
-import 'c/auth_controller.dart';
+import '../../../../widget/app_text.dart';
+import '../../../../widget/app_text_field.dart';
+import '../../../../widget/my_button.dart';
+import '../../c/auth_controller.dart';
 class ResetPasswordScreen extends StatefulWidget {
   const ResetPasswordScreen({super.key});
 

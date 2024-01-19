@@ -5,7 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../local/locale_controller.dart';
 import 'auth/c/auth_controller.dart';
-import 'auth/sign_in_screen/v/sign_in_screen.dart';
+import 'auth/v/sign_in/sign_in_screen.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
